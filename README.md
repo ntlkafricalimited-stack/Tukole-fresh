@@ -1,287 +1,183 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>KYALO FRESH - Agri Catalogue</title>
+<title>Kyalo Fresh - Agri Startup</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
-body{
-  font-family:Inter,sans-serif;
-  background:#f6f7f3;
-  overflow-x:hidden;
-}
-
-.hero{
-  background:linear-gradient(135deg,#1b5e20,#2e7d32,#33691e);
-}
-
-.card{
-  transition:0.25s ease;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-}
-
-.grid-catalogue{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:14px;
-}
-
-.badge{
-  font-size:11px;
-  padding:3px 8px;
-  border-radius:999px;
-}
-
+body{font-family:Inter,sans-serif;background:#f6f7f3;overflow-x:hidden;}
+.card{transition:0.25s ease;}
+.card:hover{transform:translateY(-5px);}
 </style>
 </head>
 
-<body>
+<body class="pt-20">
 
-<!-- TOP BAR -->
-<div class="bg-green-900 text-white text-center text-xs py-2">
-🌾 Kyalo Fresh Super Catalogue • Obulimi bwaffe • Buy Direct From Farmers
+<!-- NAV -->
+<div class="fixed top-0 w-full bg-white shadow z-50">
+<div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+<h1 class="font-bold text-green-700">🌾 Kyalo Fresh</h1>
+<a class="bg-green-600 text-white px-4 py-2 rounded-xl" href="#sell">Sell</a>
+</div>
 </div>
 
 <!-- HERO -->
-<section class="hero text-white px-5 py-10">
+<section class="bg-green-800 text-white p-10 text-center">
+<h1 class="text-3xl font-bold">Uganda Farm Marketplace</h1>
+<p class="opacity-80">Sell & Buy Fresh Produce Directly</p>
+</section>
 
-<div class="max-w-6xl mx-auto">
+<!-- LOGIN -->
+<section class="max-w-md mx-auto p-4 mt-6 bg-white rounded-xl shadow">
 
-<h1 class="text-4xl md:text-6xl font-black leading-tight">
-Uganda Farm<br>
-<span class="text-yellow-300">Fresh Catalogue</span>
-</h1>
+<h2 class="font-bold mb-3">👨‍🌾 Farmer Login</h2>
 
-<p class="mt-3 text-green-100">
-Kayunga • Mukono • Lugazi • Kangulumira • Kalagi • Ndese
-</p>
+<input id="email" placeholder="Email" class="w-full border p-3 rounded-xl mb-2">
+<input id="password" type="password" placeholder="Password" class="w-full border p-3 rounded-xl mb-2">
 
-<div class="flex gap-3 mt-5">
-
-<a href="#catalogue"
-class="bg-yellow-400 text-black font-bold px-5 py-3 rounded-xl">
-Browse Catalogue
-</a>
-
-<a href="#sell"
-class="bg-white text-green-900 font-bold px-5 py-3 rounded-xl">
-Sell Produce
-</a>
-
-</div>
-
-</div>
+<button onclick="login()" class="w-full bg-green-600 text-white p-3 rounded-xl mb-2">Login</button>
+<button onclick="register()" class="w-full bg-black text-white p-3 rounded-xl">Register</button>
 
 </section>
 
-<!-- CATEGORY BAR -->
-<section class="px-4 py-5">
+<!-- UPLOAD -->
+<section id="sell" class="max-w-2xl mx-auto p-4 mt-6 bg-white rounded-xl shadow">
 
-<div class="max-w-6xl mx-auto flex gap-2 overflow-x-auto">
+<h2 class="font-bold mb-3">🌾 Upload Produce</h2>
 
-<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🌾 All</div>
-<div class="bg-green-100 px-4 py-2 rounded-full text-sm">🍌 Matooke</div>
-<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🥕 Vegetables</div>
-<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🍊 Fruits</div>
-<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🌽 Grains</div>
-<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🥚 Eggs</div>
+<input id="name" placeholder="Product" class="w-full border p-3 rounded-xl mb-2">
+<input id="qty" placeholder="Quantity" class="w-full border p-3 rounded-xl mb-2">
+<input id="price" placeholder="Price" class="w-full border p-3 rounded-xl mb-2">
+<input id="loc" placeholder="Location" class="w-full border p-3 rounded-xl mb-2">
+<input id="image" type="file" class="w-full border p-3 rounded-xl mb-2">
 
-</div>
+<button onclick="upload()" class="w-full bg-green-700 text-white p-3 rounded-xl">
+Post Produce
+</button>
 
 </section>
 
 <!-- CATALOGUE -->
-<section id="catalogue" class="px-4 py-6">
+<section class="max-w-6xl mx-auto p-4 mt-10">
 
-<div class="max-w-6xl mx-auto">
+<h2 class="font-bold text-xl mb-4">🛒 Live Catalogue</h2>
 
-<h2 class="text-2xl font-bold mb-4">Super Catalogue</h2>
-
-<div class="grid-catalogue">
-
-<!-- ITEM 1 -->
-<div class="bg-white rounded-2xl shadow overflow-hidden card">
-
-<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?q=80&w=600"
-class="h-32 w-full object-cover">
-
-<div class="p-3">
-
-<h3 class="font-bold">Matooke</h3>
-<p class="text-xs text-gray-500">Kayunga</p>
-
-<div class="flex justify-between mt-2">
-<span class="text-green-700 font-bold">UGX 2,500</span>
-<span class="badge bg-green-100 text-green-700">Fresh</span>
-</div>
-
-<button class="mt-2 w-full bg-green-600 text-white py-2 rounded-xl text-sm">
-Order
-</button>
-
-</div>
-
-</div>
-
-<!-- ITEM 2 -->
-<div class="bg-white rounded-2xl shadow overflow-hidden card">
-
-<img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f0?q=80&w=600"
-class="h-32 w-full object-cover">
-
-<div class="p-3">
-
-<h3 class="font-bold">Cassava</h3>
-<p class="text-xs text-gray-500">Mukono</p>
-
-<div class="flex justify-between mt-2">
-<span class="text-green-700 font-bold">UGX 1,800</span>
-<span class="badge bg-green-100 text-green-700">Fresh</span>
-</div>
-
-<button class="mt-2 w-full bg-green-600 text-white py-2 rounded-xl text-sm">
-Order
-</button>
-
-</div>
-
-</div>
-
-<!-- ITEM 3 -->
-<div class="bg-white rounded-2xl shadow overflow-hidden card">
-
-<img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=600"
-class="h-32 w-full object-cover">
-
-<div class="p-3">
-
-<h3 class="font-bold">Bananas</h3>
-<p class="text-xs text-gray-500">Lugazi</p>
-
-<div class="flex justify-between mt-2">
-<span class="text-green-700 font-bold">UGX 3,000</span>
-<span class="badge bg-green-100 text-green-700">Fresh</span>
-</div>
-
-<button class="mt-2 w-full bg-green-600 text-white py-2 rounded-xl text-sm">
-Order
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+<div id="listings" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
 
 </section>
 
-<!-- SELL -->
-<section id="sell" class="px-4 py-10 bg-white">
-
-<div class="max-w-6xl mx-auto">
-
-<h2 class="text-2xl font-bold mb-4">Sell Your Produce</h2>
-
-<form id="form" class="space-y-3">
-
-<input id="name" placeholder="Product Name"
-class="w-full border p-3 rounded-xl">
-
-<input id="qty" placeholder="Quantity"
-class="w-full border p-3 rounded-xl">
-
-<input id="price" placeholder="Price"
-class="w-full border p-3 rounded-xl">
-
-<select id="loc" class="w-full border p-3 rounded-xl">
-<option>Location</option>
-<option>Kayunga</option>
-<option>Mukono</option>
-<option>Lugazi</option>
-</select>
-
-<button class="w-full bg-green-700 text-white p-3 rounded-xl font-bold">
-Post To Catalogue
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- LIVE LISTINGS -->
-<section class="px-4 py-10">
-
-<div class="max-w-6xl mx-auto">
-
-<h2 class="text-2xl font-bold mb-4">Live Farmer Listings</h2>
-
-<div id="listings" class="grid-catalogue"></div>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-green-950 text-white text-center py-8">
-
-Kyalo Fresh Super Catalogue © 2026
-
-</footer>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/256700000000"
-class="fixed bottom-5 right-5 bg-green-500 w-14 h-14 rounded-full flex items-center justify-center text-2xl text-white shadow-xl">
-💬
-</a>
-
-<!-- SCRIPT -->
-<script>
+<!-- FIREBASE -->
 <script type="module">
 
-const form = document.getElementById("form");
-const listings = document.getElementById("listings");
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-form.addEventListener("submit", async (e)=>{
-e.preventDefault();
+/* 🔴 REPLACE WITH YOUR FIREBASE CONFIG */
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  appId: "YOUR_APP"
+};
 
-const name = document.getElementById("name").value;
-const qty = document.getElementById("qty").value;
-const price = document.getElementById("price").value;
-const loc = document.getElementById("loc").value;
-const imageFile = document.getElementById("image")?.files[0];
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
 
-let imageUrl = "";
+let user = null;
 
-if(imageFile){
-  const storageRef = firebaseTools.ref(firebaseStorage, "produce/" + Date.now());
-  await firebaseTools.uploadBytes(storageRef, imageFile);
-  imageUrl = await firebaseTools.getDownloadURL(storageRef);
+/* LOGIN */
+window.login = async ()=>{
+const email = email.value;
+const pass = password.value;
+await signInWithEmailAndPassword(auth,email,pass);
+alert("Logged in");
 }
 
-await firebaseTools.addDoc(firebaseTools.collection(firebaseDB,"products"), {
-  name,
-  qty,
-  price,
-  location: loc,
-  image: imageUrl,
-  time: Date.now()
+/* REGISTER */
+window.register = async ()=>{
+const email = email.value;
+const pass = password.value;
+await createUserWithEmailAndPassword(auth,email,pass);
+alert("Account created");
+}
+
+/* AUTH STATE */
+onAuthStateChanged(auth,(u)=>{
+user = u;
 });
 
-form.reset();
+/* UPLOAD */
+window.upload = async ()=>{
 
-alert("✅ Uploaded to Kyalo Fresh Market!");
+if(!user){
+alert("Login first");
+return;
+}
+
+const file = image.files[0];
+
+const storageRef = ref(storage,"products/"+Date.now());
+await uploadBytes(storageRef,file);
+const url = await getDownloadURL(storageRef);
+
+await addDoc(collection(db,"products"),{
+name:name.value,
+qty:qty.value,
+price:price.value,
+location:loc.value,
+image:url,
+user:user.email
+});
+
+alert("Uploaded");
+
+}
+
+/* LIVE CATALOGUE */
+const listings = document.getElementById("listings");
+
+onSnapshot(collection(db,"products"),(snap)=>{
+
+listings.innerHTML="";
+
+snap.forEach(doc=>{
+const d = doc.data();
+
+listings.innerHTML += `
+<div class="bg-white rounded-xl shadow overflow-hidden card">
+
+<img src="${d.image}" class="h-28 w-full object-cover"/>
+
+<div class="p-2">
+
+<h3 class="font-bold">${d.name}</h3>
+<p class="text-xs text-gray-500">${d.location}</p>
+
+<div class="flex justify-between">
+<span class="text-green-700 font-bold">${d.price}</span>
+<span class="text-xs">${d.qty}</span>
+</div>
+
+<a href="https://wa.me/256700000000"
+class="block mt-2 bg-green-600 text-white text-center p-2 rounded-xl text-sm">
+Order
+</a>
+
+</div>
+
+</div>
+`;
+
+});
+
 });
 
 </script>
