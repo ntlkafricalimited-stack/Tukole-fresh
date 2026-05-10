@@ -3,29 +3,21 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kyalo Fresh - Obulimi Bwaffe</title>
+<title>Kyalo Fresh - Agri Catalogue</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 body{
-  font-family:Inter, sans-serif;
+  font-family:Inter,sans-serif;
+  background:#f6f7f3;
   overflow-x:hidden;
-  background:#f8faf8;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
-.hero-bg{
-  background:
-  linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.35)),
-  url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1600&auto=format&fit=crop');
-  background-size:cover;
-  background-position:center;
+.hero{
+  background:linear-gradient(135deg,#1b5e20,#2e7d32,#33691e);
 }
 
 .card{
@@ -33,95 +25,56 @@ html{
 }
 
 .card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-5px);
 }
 
-.safe-container{
-  max-width:1200px;
-  margin:auto;
-  padding-left:16px;
-  padding-right:16px;
+.grid-catalogue{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
 }
 
-/* MOBILE SAFETY FIX */
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
-}
-
-button,a,input,select{
-  font-size:16px;
+.badge{
+  font-size:11px;
+  padding:3px 8px;
+  border-radius:999px;
 }
 
 </style>
 </head>
 
-<body class="text-gray-800 pt-20">
+<body>
 
-<!-- NAV -->
-<header class="fixed top-0 left-0 w-full bg-white shadow z-50">
-
-<div class="safe-container flex items-center justify-between h-16">
-
-<!-- LOGO -->
-<div class="flex items-center gap-3">
-
-<div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">
-🌾
+<!-- TOP BAR -->
+<div class="bg-green-900 text-white text-center text-xs py-2">
+🌾 Kyalo Fresh Super Catalogue • Obulimi bwaffe • Buy Direct From Farmers
 </div>
-
-<div>
-<h1 class="font-extrabold text-green-700 text-lg">Kyalo Fresh</h1>
-<p class="text-xs text-gray-500">Obulimi bwaffe</p>
-</div>
-
-</div>
-
-<!-- MENU -->
-<nav class="hidden md:flex gap-6 font-semibold text-sm">
-<a href="#market">Market</a>
-<a href="#sell">Sell</a>
-<a href="#ads">Ads</a>
-</nav>
-
-<a href="https://wa.me/256700000000"
-class="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold">
-WhatsApp
-</a>
-
-</div>
-
-</header>
 
 <!-- HERO -->
-<section class="hero-bg min-h-[90vh] flex items-center">
+<section class="hero text-white px-5 py-10">
 
-<div class="safe-container grid grid-cols-1 lg:grid-cols-2 gap-10">
+<div class="max-w-6xl mx-auto">
 
-<div class="text-center lg:text-left">
-
-<h1 class="text-white font-black leading-tight text-4xl sm:text-5xl lg:text-6xl">
-Sell Your Harvest Faster
+<h1 class="text-4xl md:text-6xl font-black leading-tight">
+Uganda Farm<br>
+<span class="text-yellow-300">Fresh Catalogue</span>
 </h1>
 
-<p class="text-gray-200 mt-4 text-base sm:text-lg">
-Kyalo Fresh connects farmers in Central Uganda directly to buyers.
+<p class="mt-3 text-green-100">
+Kayunga • Mukono • Lugazi • Kangulumira • Kalagi • Ndese
 </p>
 
-<div class="flex flex-col sm:flex-row gap-4 mt-6">
+<div class="flex gap-3 mt-5">
+
+<a href="#catalogue"
+class="bg-yellow-400 text-black font-bold px-5 py-3 rounded-xl">
+Browse Catalogue
+</a>
 
 <a href="#sell"
-class="bg-green-600 text-white px-6 py-4 rounded-xl font-bold text-center">
+class="bg-white text-green-900 font-bold px-5 py-3 rounded-xl">
 Sell Produce
 </a>
-
-<a href="#market"
-class="bg-white text-black px-6 py-4 rounded-xl font-bold text-center">
-Browse Market
-</a>
-
-</div>
 
 </div>
 
@@ -129,30 +82,98 @@ Browse Market
 
 </section>
 
-<!-- MARKET -->
-<section id="market" class="py-16">
+<!-- CATEGORY BAR -->
+<section class="px-4 py-5">
 
-<div class="safe-container">
+<div class="max-w-6xl mx-auto flex gap-2 overflow-x-auto">
 
-<h2 class="text-3xl font-bold mb-6">Marketplace</h2>
+<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🌾 All</div>
+<div class="bg-green-100 px-4 py-2 rounded-full text-sm">🍌 Matooke</div>
+<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🥕 Vegetables</div>
+<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🍊 Fruits</div>
+<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🌽 Grains</div>
+<div class="bg-white px-4 py-2 rounded-full shadow text-sm">🥚 Eggs</div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+</div>
 
-<!-- CARD -->
+</section>
+
+<!-- CATALOGUE -->
+<section id="catalogue" class="px-4 py-6">
+
+<div class="max-w-6xl mx-auto">
+
+<h2 class="text-2xl font-bold mb-4">Super Catalogue</h2>
+
+<div class="grid-catalogue">
+
+<!-- ITEM 1 -->
 <div class="bg-white rounded-2xl shadow overflow-hidden card">
 
-<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?q=80&w=600&auto=format&fit=crop"
-class="h-48 w-full object-cover"/>
+<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?q=80&w=600"
+class="h-32 w-full object-cover">
 
-<div class="p-4">
+<div class="p-3">
 
-<h3 class="font-bold text-lg">Matooke</h3>
-<p class="text-gray-500 text-sm">Kayunga</p>
+<h3 class="font-bold">Matooke</h3>
+<p class="text-xs text-gray-500">Kayunga</p>
 
-<div class="flex justify-between mt-3 items-center">
+<div class="flex justify-between mt-2">
 <span class="text-green-700 font-bold">UGX 2,500</span>
-<span class="text-xs bg-green-100 px-2 py-1 rounded-full">Fresh</span>
+<span class="badge bg-green-100 text-green-700">Fresh</span>
 </div>
+
+<button class="mt-2 w-full bg-green-600 text-white py-2 rounded-xl text-sm">
+Order
+</button>
+
+</div>
+
+</div>
+
+<!-- ITEM 2 -->
+<div class="bg-white rounded-2xl shadow overflow-hidden card">
+
+<img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f0?q=80&w=600"
+class="h-32 w-full object-cover">
+
+<div class="p-3">
+
+<h3 class="font-bold">Cassava</h3>
+<p class="text-xs text-gray-500">Mukono</p>
+
+<div class="flex justify-between mt-2">
+<span class="text-green-700 font-bold">UGX 1,800</span>
+<span class="badge bg-green-100 text-green-700">Fresh</span>
+</div>
+
+<button class="mt-2 w-full bg-green-600 text-white py-2 rounded-xl text-sm">
+Order
+</button>
+
+</div>
+
+</div>
+
+<!-- ITEM 3 -->
+<div class="bg-white rounded-2xl shadow overflow-hidden card">
+
+<img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=600"
+class="h-32 w-full object-cover">
+
+<div class="p-3">
+
+<h3 class="font-bold">Bananas</h3>
+<p class="text-xs text-gray-500">Lugazi</p>
+
+<div class="flex justify-between mt-2">
+<span class="text-green-700 font-bold">UGX 3,000</span>
+<span class="badge bg-green-100 text-green-700">Fresh</span>
+</div>
+
+<button class="mt-2 w-full bg-green-600 text-white py-2 rounded-xl text-sm">
+Order
+</button>
 
 </div>
 
@@ -165,25 +186,22 @@ class="h-48 w-full object-cover"/>
 </section>
 
 <!-- SELL -->
-<section id="sell" class="py-16 bg-green-50">
+<section id="sell" class="px-4 py-10 bg-white">
 
-<div class="safe-container">
+<div class="max-w-6xl mx-auto">
 
-<h2 class="text-3xl font-bold mb-6">Farmer Upload</h2>
+<h2 class="text-2xl font-bold mb-4">Sell Your Produce</h2>
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-<!-- FORM -->
-<form id="form" class="bg-white p-6 rounded-2xl shadow space-y-4">
+<form id="form" class="space-y-3">
 
 <input id="name" placeholder="Product Name"
-class="w-full border p-3 rounded-xl"/>
+class="w-full border p-3 rounded-xl">
 
 <input id="qty" placeholder="Quantity"
-class="w-full border p-3 rounded-xl"/>
+class="w-full border p-3 rounded-xl">
 
 <input id="price" placeholder="Price"
-class="w-full border p-3 rounded-xl"/>
+class="w-full border p-3 rounded-xl">
 
 <select id="loc" class="w-full border p-3 rounded-xl">
 <option>Location</option>
@@ -192,60 +210,39 @@ class="w-full border p-3 rounded-xl"/>
 <option>Lugazi</option>
 </select>
 
-<button class="w-full bg-green-600 text-white p-3 rounded-xl font-bold">
-Post Produce
+<button class="w-full bg-green-700 text-white p-3 rounded-xl font-bold">
+Post To Catalogue
 </button>
 
 </form>
-
-<!-- LIVE LISTINGS -->
-<div id="listings" class="space-y-4"></div>
-
-</div>
 
 </div>
 
 </section>
 
-<!-- ADS -->
-<section id="ads" class="py-16">
+<!-- LIVE LISTINGS -->
+<section class="px-4 py-10">
 
-<div class="safe-container">
+<div class="max-w-6xl mx-auto">
 
-<h2 class="text-3xl font-bold mb-6">Business Ads</h2>
+<h2 class="text-2xl font-bold mb-4">Live Farmer Listings</h2>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-<div class="bg-white p-6 rounded-2xl shadow">
-Starter Package
-</div>
-
-<div class="bg-green-100 p-6 rounded-2xl shadow">
-Pro Package
-</div>
-
-<div class="bg-white p-6 rounded-2xl shadow">
-Enterprise
-</div>
-
-</div>
+<div id="listings" class="grid-catalogue"></div>
 
 </div>
 
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-black text-white py-10">
+<footer class="bg-green-950 text-white text-center py-8">
 
-<div class="safe-container text-center text-sm text-gray-300">
-Kyalo Fresh © 2026 • Obulimi bwaffe
-</div>
+Kyalo Fresh Super Catalogue © 2026
 
 </footer>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/256700000000"
-class="fixed bottom-5 right-5 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl">
+class="fixed bottom-5 right-5 bg-green-500 w-14 h-14 rounded-full flex items-center justify-center text-2xl text-white shadow-xl">
 💬
 </a>
 
@@ -255,7 +252,7 @@ class="fixed bottom-5 right-5 bg-green-500 text-white w-14 h-14 rounded-full fle
 const form = document.getElementById("form");
 const listings = document.getElementById("listings");
 
-form.addEventListener("submit", function(e){
+form.addEventListener("submit",(e)=>{
 e.preventDefault();
 
 const name = document.getElementById("name").value;
@@ -263,16 +260,17 @@ const qty = document.getElementById("qty").value;
 const price = document.getElementById("price").value;
 const loc = document.getElementById("loc").value;
 
-const card = document.createElement("div");
-card.className = "bg-white p-4 rounded-2xl shadow";
+const div = document.createElement("div");
+div.className="bg-white p-3 rounded-2xl shadow card";
 
-card.innerHTML = `
-<b>${name}</b><br/>
-${qty} • ${loc}<br/>
-<span class="text-green-700 font-bold">${price}</span>
+div.innerHTML=`
+<h3 class="font-bold">${name}</h3>
+<p class="text-xs text-gray-500">${loc}</p>
+<p class="text-green-700 font-bold">${price}</p>
+<span class="text-xs">${qty}</span>
 `;
 
-listings.prepend(card);
+listings.prepend(div);
 
 form.reset();
 
