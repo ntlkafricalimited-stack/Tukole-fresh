@@ -248,32 +248,40 @@ class="fixed bottom-5 right-5 bg-green-500 w-14 h-14 rounded-full flex items-cen
 
 <!-- SCRIPT -->
 <script>
+<script type="module">
 
 const form = document.getElementById("form");
 const listings = document.getElementById("listings");
 
-form.addEventListener("submit",(e)=>{
+form.addEventListener("submit", async (e)=>{
 e.preventDefault();
 
 const name = document.getElementById("name").value;
 const qty = document.getElementById("qty").value;
 const price = document.getElementById("price").value;
 const loc = document.getElementById("loc").value;
+const imageFile = document.getElementById("image")?.files[0];
 
-const div = document.createElement("div");
-div.className="bg-white p-3 rounded-2xl shadow card";
+let imageUrl = "";
 
-div.innerHTML=`
-<h3 class="font-bold">${name}</h3>
-<p class="text-xs text-gray-500">${loc}</p>
-<p class="text-green-700 font-bold">${price}</p>
-<span class="text-xs">${qty}</span>
-`;
+if(imageFile){
+  const storageRef = firebaseTools.ref(firebaseStorage, "produce/" + Date.now());
+  await firebaseTools.uploadBytes(storageRef, imageFile);
+  imageUrl = await firebaseTools.getDownloadURL(storageRef);
+}
 
-listings.prepend(div);
+await firebaseTools.addDoc(firebaseTools.collection(firebaseDB,"products"), {
+  name,
+  qty,
+  price,
+  location: loc,
+  image: imageUrl,
+  time: Date.now()
+});
 
 form.reset();
 
+alert("✅ Uploaded to Kyalo Fresh Market!");
 });
 
 </script>
